@@ -1,14 +1,14 @@
 let words = [
-  "amor", "amistad", "alegría", "aventura", "belleza", "bondad", "cariño", "compasión", "confianza", "creatividad",
-  "dicha", "dignidad", "esperanza", "felicidad", "fortaleza", "generosidad", "gratitud", "honestidad", "humildad", "ilusión",
-  "inspiración", "inteligencia", "libertad", "luz", "maravilla", "optimismo", "paciencia", "paz", "perseverancia", "placer",
-  "positividad", "prosperidad", "pureza", "respeto", "sabiduría", "serenidad", "sinceridad", "solidaridad", "ternura", "tranquilidad",
-  "valentía", "verdad", "vitalidad", "voluntad", "abundancia", "admiración", "afecto", "alegría", "altruismo", "armonía",
-  "benevolencia", "bienestar", "calma", "compañerismo", "comprensión", "conocimiento", "crecimiento", "dedicación", "determinación", "dicha",
-  "disciplina", "empatía", "energía", "entusiasmo", "equilibrio", "esfuerzo", "esperanza", "estabilidad", "éxito", "felicidad",
-  "fidelidad", "fuerza", "generosidad", "gratitud", "honor", "humor", "imaginación", "integridad", "justicia", "lealtad",
-  "logro", "motivación", "optimismo", "paciencia", "pasión", "perfección", "perseverancia", "plenitud", "positividad", "progreso",
-  "prosperidad", "pureza", "realización", "respeto", "sabiduría", "satisfacción", "serenidad", "solidaridad", "ternura", "tranquilidad"
+  "amor", "amistad", "alegria", "aventura", "belleza", "bondad", "carino", "compasion", "confianza", "creatividad",
+  "dicha", "dignidad", "esperanza", "felicidad", "fortaleza", "generosidad", "gratitud", "honestidad", "humildad", "ilusion",
+  "inspiracion", "inteligencia", "libertad", "luz", "maravilla", "optimismo", "paciencia", "paz", "perseverancia", "placer",
+  "positividad", "prosperidad", "pureza", "respeto", "sabiduria", "serenidad", "sinceridad", "solidaridad", "ternura", "tranquilidad",
+  "valentia", "verdad", "vitalidad", "voluntad", "abundancia", "admiracion", "afecto", "alegria", "altruismo", "armonia",
+  "benevolencia", "bienestar", "calma", "companierismo", "comprension", "conocimiento", "crecimiento", "dedicacion", "determinacion", "dicha",
+  "disciplina", "empatia", "energia", "entusiasmo", "equilibrio", "esfuerzo", "esperanza", "estabilidad", "exito", "felicidad",
+  "fidelidad", "fuerza", "generosidad", "gratitud", "honor", "humor", "imaginacion", "integridad", "justicia", "lealtad",
+  "logro", "motivacion", "optimismo", "paciencia", "pasion", "perfeccion", "perseverancia", "plenitud", "positividad", "progreso",
+  "prosperidad", "pureza", "realizacion", "respeto", "sabiduria", "satisfaccion", "serenidad", "solidaridad", "ternura", "tranquilidad"
 ];
 
 let sectionSpan = document.getElementById('idLetters');
@@ -31,17 +31,24 @@ for (let i = 0; i < word.length; i++) {
 function checkLetter(){
   let isError = true;
   let letter = document.getElementById('valueLetter').value;
+  let letterLower = letter.toLowerCase();
   for (let i = 0; i < word.length; i++) {
-    if (word[i] == letter) {
-      sectionSpan.children[i].innerText = letter;
+    if (word[i] == letterLower) {
+      sectionSpan.children[i].innerText = letterLower;
       isError = false;
-    } 
+    }
   }
   if (isError) {
     numErrors++;
     document.getElementById('idImg').src = `./assets/error${numErrors}.png`;
   }
+  if (numErrors == 7) {
+    alert('Perdiste');
+  }
 
-  console.log(letter);
+  valueLetter.value = '';
+
+  console.log(letterLower);
   console.log(word);
 }
+

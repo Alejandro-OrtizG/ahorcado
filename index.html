@@ -9,12 +9,23 @@
   <title>Document</title>
 </head>
 <body>
+  <section class="instructions">
+    <h1 class="title"> <b>Ahorcado</b></h1>
+    <p>Pasos para jugar ahorcado:</p>
+    <ol>
+      <li>Debes escribir una letra que consideres que está presente en la palabra</li>
+      <li>La letra ingresada no debe ir con tíldes y no contiene la letra 'ñ'</li>
+      <li>Si la letra está presente, se mostrará en la palabra</li>
+      <li>Si la letra no está presente, cambiará la imagen para mostrar el progreso</li>
+      <li>Solo tienes 7 oportunidades</li>
+    </ol>
+  </section>
   <section class="imagen">
     <img src="./assets/error0.png" alt="imagen-base" class="imagen-base" id="idImg">
   </section>
   <section class="input">
     <input type="text" placeholder="Ingresa una letra" id="valueLetter">
-    <button class="Comprobar" onclick="checkLetter()">Comprobar</button>
+    <button class="comprobar" onclick="checkLetter()">Comprobar</button>
   </section>
   <section class="letters" id="idLetters">
   </section>
