@@ -12,7 +12,7 @@ let words = [
 ];
 
 let sectionSpan = document.getElementById('idLetters');
-
+let modal = document.getElementById('idModal');
 let numErrors = 0;
 
 let chooseWord = () => {
@@ -28,7 +28,7 @@ for (let i = 0; i < word.length; i++) {
   sectionSpan.append(element);
 }
 
-function checkLetter(){
+function checkLetter() {
   let isError = true;
   let letter = document.getElementById('valueLetter').value;
   let letterLower = letter.toLowerCase();
@@ -43,12 +43,31 @@ function checkLetter(){
     document.getElementById('idImg').src = `./assets/error${numErrors}.png`;
   }
   if (numErrors == 7) {
-    alert('Perdiste');
+    modal.classList.add('modalView')
+    document.getElementById('idPModal').innerText = 'Perdiste'
+  }
+
+  let arraySpan = sectionSpan.children;
+  let contador = 0;
+
+  for (let i = 0; i < arraySpan.length; i++) {
+    if (arraySpan[i].textContent != '') {
+      contador++
+    }
+  }
+
+  if (contador == word.length) {
+    modal.classList.add('modalView')
+    document.getElementById('idPModal').innerText = 'Ganaste'
   }
 
   valueLetter.value = '';
 
   console.log(letterLower);
   console.log(word);
+}
+
+function playAgain() {
+  location.reload();
 }
 

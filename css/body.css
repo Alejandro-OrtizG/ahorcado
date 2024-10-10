@@ -1,0 +1,48 @@
+.instructions{
+  padding: 20px;
+}
+.imagen{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-base{
+    margin-left: 50px;
+    width: 350px;
+}
+
+.input{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.letra{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letters{
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.comprobar{
+  margin-left: 30px;
+}
+
+.letra::before{
+  width: 100%;
+  height: 3px;
+  border-radius: 50px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+}
