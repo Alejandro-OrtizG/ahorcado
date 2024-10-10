@@ -63,8 +63,6 @@ function checkLetter() {
 
   valueLetter.value = '';
 
-  console.log(letterLower);
-  console.log(word);
 }
 
 function playAgain() {
